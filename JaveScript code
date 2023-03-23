@@ -1,0 +1,37 @@
+function isValidWalk(walk) {
+    console.log(walk.length)
+  if (walk.length < 4) {
+    return false;
+  }
+  
+  let v = 0;
+  let h = 0;
+  let arr = walk;
+  for (let i = 0; i < walk.length; i++) {
+    switch (arr[i]) {
+      case 'n': 
+        v+=1;
+        break;
+    }
+    switch (walk[i]) {
+      case 'e': 
+        h+=1;
+        break;
+    }
+    switch (walk[i]) {
+      case 's': 
+        v-=1;
+        break;
+    }
+    switch (walk[i]) {
+      case 'w': 
+        h-=1;
+        break;
+    }
+  }
+
+  if (v == 0 && h == 0 && walk.length <= 10) {
+    return true}
+    else {return false}
+
+}
